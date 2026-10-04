@@ -1,0 +1,27 @@
+{
+  "note": "Fictional sandbox records for the Job Application Tracker.",
+  "records": [
+    {
+      "application_id": "APP-001",
+      "company": "Northstar Analytics",
+      "role": "Junior Data Analyst",
+      "application_date": "2026-09-15",
+      "status": "applied",
+      "job_url": "https://example.com/jobs/northstar-analyst",
+      "location": "Remote",
+      "deadline": null,
+      "notes": "Fictional starter record."
+    },
+    {
+      "application_id": "APP-002",
+      "company": "Bluebird Robotics",
+      "role": "Software Engineering Intern",
+      "application_date": "2026-09-20",
+      "status": "assessment",
+      "job_url": "https://example.com/jobs/bluebird-intern",
+      "location": "Lahore",
+      "deadline": "2026-10-10",
+      "notes": "Fictional starter record."
+    }
+  ]
+}

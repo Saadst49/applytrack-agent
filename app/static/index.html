@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>ApplyTrack Agent</title>
+	<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+	<header class="site-header">
+		<div>
+			<p class="eyebrow">APPLYTRACK</p>
+			<h1>ApplyTrack Agent</h1>
+			<p class="subtitle">Bounded Job Application Tracker</p>
+		</div>
+		<div class="header-actions">
+			<span id="health" class="health">Checking service...</span>
+			<a href="/docs">API docs</a>
+		</div>
+	</header>
+
+	<main class="workspace">
+		<section class="chat-panel" aria-label="Chat">
+			<div class="panel-heading">
+				<div>
+					<p class="eyebrow">WORKSPACE</p>
+					<h2>Application desk</h2>
+				</div>
+				<button id="reset" class="secondary-button" type="button">New chat</button>
+			</div>
+
+			<div class="settings-row">
+				<label for="model">Model<select id="model"></select></label>
+				<span id="memory">0 messages in this chat</span>
+			</div>
+
+			<div id="messages" class="messages" aria-live="polite">
+				<div class="empty-state"><strong>What should we track?</strong><span>Search, update, or draft from your sandbox records.</span></div>
+			</div>
+
+			<div class="examples" aria-label="Example requests">
+				<span>Try an example</span>
+				<button type="button" data-example="Track my Arbisoft AI Intern application.">Track Arbisoft</button>
+				<button type="button" data-example="Update my Systems Limited ML Intern application to interview.">Update Systems</button>
+				<button type="button" data-example="Draft a follow-up for APP-002.">Draft follow-up</button>
+			</div>
+
+			<form id="chat" class="composer">
+				<label for="task">Your request</label>
+				<textarea id="task" required maxlength="10000" placeholder="Track an application, update a status, or request a draft..."></textarea>
+				<div class="composer-footer"><span>Sandbox actions only</span><button id="send" type="submit">Send request</button></div>
+			</form>
+		</section>
+
+		<aside class="inspector" aria-label="Run inspector">
+			<div class="inspector-section run-summary">
+				<div class="panel-heading compact"><h2>Current run</h2><span id="status" role="status" class="status-pill idle">Idle</span></div>
+				<dl class="run-metrics">
+					<div><dt>Stop reason</dt><dd id="stop-reason">-</dd></div>
+					<div><dt>Steps</dt><dd id="steps">0</dd></div>
+				</dl>
+			</div>
+			<div class="inspector-section">
+				<label for="external">External context <span>(untrusted data)</span></label>
+				<textarea id="external" maxlength="10000" placeholder="Paste a recruiter note or job text for review. It cannot change system policy."></textarea>
+			</div>
+			<div class="inspector-section"><h2>Tool trace</h2><pre id="trace">No tool calls yet.</pre></div>
+			<div class="inspector-section"><h2>Events and observations</h2><pre id="observations">No observations yet.</pre></div>
+		</aside>
+	</main>
+
+	<footer>Temporary in-memory session. Reloading starts a new chat. Never paste API keys into the interface.</footer>
+	<script src="/static/app.js"></script>
+</body>
+</html>

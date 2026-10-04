@@ -1,0 +1,27 @@
+{
+  "arena_version": "0.1",
+  "agent_name": "ApplyTrack Agent",
+  "domain": "Job Application Tracker",
+  "description": "A bounded assistant for searching, adding, updating, and drafting follow-ups for fictional job applications.",
+  "endpoint": "/arena/run",
+  "health_endpoint": "/health",
+  "implementation": "ApplyTrack Agent",
+  "actions": [
+    "search_applications",
+    "add_application",
+    "update_application",
+    "generate_followup_draft"
+  ],
+  "fault_types": [
+    "none",
+    "tool_timeout",
+    "malformed_tool_output",
+    "invalid_agent_decision"
+  ],
+  "limits": {
+    "max_steps": 6,
+    "max_tool_retries": 2,
+    "run_timeout_seconds": 40,
+    "max_response_bytes": 50000
+  }
+}
